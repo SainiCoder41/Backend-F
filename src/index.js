@@ -14,7 +14,7 @@ const paymentRouter  = require('./controllers/payment');
 const videoRouter = require('./routes/videoCreator');
 const contestSubmitRouter = require('./routes/contestSubmit');
 app.use(cors({
-    origin: ['http://localhost:5173','https://codex-frontend-dusky.vercel.app'],
+    origin: ['http://localhost:5173','https://frontend-three-brown-19.vercel.app'],
     credentials: true 
 }))
 
