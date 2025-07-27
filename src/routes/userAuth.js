@@ -1,5 +1,6 @@
 const express = require('express');
 const authRouther = express.Router();
+require('dotenv').config();
 const userMiddleware = require("../middleware/userMiddleware");
 const adminMiddleware = require("../middleware/adminMiddleware");
 
