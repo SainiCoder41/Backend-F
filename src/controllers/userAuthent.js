@@ -26,7 +26,13 @@ const register = async (req,res)=>{
         _id: user._id,
       
     }
-     res.cookie('token',token,{maxAge: 60*60*1000});
+res.cookie("token", token, {
+  httpOnly: true,
+  secure: true,
+  sameSite: "None",
+  maxAge: 60 * 60 * 1000 // 1 hour
+});
+
      res.status(201).json({
         user:reply,
         message:"Loggin Successfully"
@@ -63,7 +69,12 @@ const login = async (req,res)=>{
             const token = jwt.sign({ _id: user._id, emailId:emailId,role:user.role }, process.env.JWT_KEY, {
       expiresIn: 3600,
     });
-    res.cookie("token", token, { maxAge: 60 * 60 * 1000 });
+res.cookie("token", token, {
+  httpOnly: true,
+  secure: true,
+  sameSite: "None",
+  maxAge: 60 * 60 * 1000 // 1 hour
+});
 
 
     res.status(201).json({
