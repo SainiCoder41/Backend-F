@@ -1,6 +1,6 @@
 const redisclient = require("../config/redis");
 const User = require("../models/user");
-
+require('dotenv').config();
 const validate = require("../utils/validator");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
