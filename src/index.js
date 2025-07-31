@@ -14,7 +14,7 @@ const paymentRouter  = require('./controllers/payment');
 const videoRouter = require('./routes/videoCreator');
 const contestSubmitRouter = require('./routes/contestSubmit');
 app.use(cors({
-    origin: 'https://frontend-2nie.vercel.app',
+    origin: 'https://www.codexweb.shop',
     credentials: true 
 }))
 
