@@ -1,18 +1,21 @@
-const validator = require("validator");
-// dowload npm i validator
+const validator =require("validator");
+
+// req.body 
+
 const validate = (data)=>{
+   
+    const mandatoryField = ['firstName',"emailId",'password'];
 
-    const mandatoryField = ['firstName','emailId','password'];
-    const isAllowed = mandatoryField.every((k)=>Object.keys(data).includes(k));
-    if(! isAllowed){
-        throw new Error("Some Field is missing");
+    const IsAllowed = mandatoryField.every((k)=> Object.keys(data).includes(k));
 
-    }
-    if(! validator.isEmail(data.emailId)){
+    if(!IsAllowed)
+        throw new Error("Some Field Missing");
+
+    if(!validator.isEmail(data.emailId))
         throw new Error("Invalid Email");
-    }
-    // if(!validator.isStrongPassword(data.password)){
-    //     throw new Error("Weak Password");
-    // }
+
+    if(!validator.isStrongPassword(data.password))
+        throw new Error("Week Password");
 }
+
 module.exports = validate;
