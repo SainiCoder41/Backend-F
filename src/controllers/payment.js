@@ -33,7 +33,7 @@ paymentRouter.post("/payment", userMiddleware, async (req, res) => {
         },
       ],
       mode: "payment",
-      success_url: `https://www.codexweb.shop/payment/success?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `https://www.codexweb.shop/payment/success?session_id=${CHECKOUT_SESSION_ID}`,
       cancel_url: "https://www.codexweb.shop/payment/cancel",
       customer_email: req?.result?.emailId, // optional
     });
