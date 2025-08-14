@@ -1,7 +1,7 @@
 const express = require("express");
 const User  = require("../models/user");
 const paymentRouter = express.Router();
-const stripe = require("stripe")(process.env.PAYMENT_SCERET_kEY)
+const stripe = require("stripe")(process.env.PAYMENT_SECRET_KEY)
 const userMiddleware = require("../middleware/userMiddleware");
 
 
